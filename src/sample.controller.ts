@@ -5,13 +5,13 @@ import { AuthGuard } from '@nestjs/passport';
 export class SampleController {
 
   @Get('/public')
-  async getTodos(@Request() req) {
+  async public(@Request() req) {
     return {message: 'public api'}
   }
 
   @UseGuards(AuthGuard('jwt'))
   @Get('/private')
-  async getTodo(
+  async private(
       @Request() req,
   ) {
     return {message: 'private api', sub: req.user.sub}
