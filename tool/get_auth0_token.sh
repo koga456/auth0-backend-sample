@@ -11,8 +11,8 @@ curl -s --request POST \
   --url ${auth_url}/oauth/token \
   --header 'content-type: application/x-www-form-urlencoded' \
   --data grant_type=password \
-  --data username${username} \
-  --data password${password} \
+  --data username=${username} \
+  --data password=${password} \
   --data client_id=${client_id} \
   --data client_secret=${client_secret} \ | jq -r
 echo "\n"
